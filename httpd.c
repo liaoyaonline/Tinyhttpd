@@ -490,8 +490,8 @@ int main(void)
     int server_sock = -1;
     u_short port = 4000;
     int client_sock = -1;
-    struct sockaddr_in client_name;
-    socklen_t  client_name_len = sizeof(client_name);
+    struct sockaddr_in client_name;//cockaddr_in里面包括协议族，端口，地址信息
+    socklen_t  client_name_len = sizeof(client_name);//socklen_t始终与当前机器的int类型大小相同
     //pthread_t newthread;
 
     server_sock = startup(&port);
